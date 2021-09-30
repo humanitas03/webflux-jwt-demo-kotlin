@@ -1,0 +1,23 @@
+spring:
+  r2dbc:
+    url: r2dbc:mysql://localhost:3310/mydb?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: jay
+    password: 1234
+    pool:
+      max-size: 100
+      validation-query: SELECT 1
+
+logging:
+  level:
+    org:
+      springframework:
+        r2dbc: DEBUG
+
+jwt:
+  iteration: 33
+  secret: aHVtYW5pdGFzMDMwNWh1bWFuaXRhczAzMDVodW1hbml0YXMwMzA1aHVtYW5pdGFzMDMwNWh1bWFuaXRhczAzMDVodW1hbml0YXMwMzA1aHVtYW5pdGFzMDMwNQ==
+  keylength: 256
+  token-validity-in-seconds: 86400
+  jjwt:
+    secret: ThisIsSecretForJWTHS512SignatureAlgorithmThatMUSTHave64ByteLength
+    expiration : 28800
