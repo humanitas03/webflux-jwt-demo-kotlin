@@ -1,8 +1,6 @@
 version: "3.7" # 파일 규격 버전
-volumes:
-  dbdata: # 볼륨 명칭 : docker_dbdate
 services: # 이 항목 밑에 실행하려는 컨테이너 들을 정의 ( 컴포즈에서 컨테이너 : 서비스 )
-  db: # 서비스 명
+  webflux-security-kotlin-jwt-mysql-db: # 서비스 명
     #### mysql 이미지
     image: mysql:5.7 # 사용할 이미지
     restart: always
@@ -21,4 +19,4 @@ services: # 이 항목 밑에 실행하려는 컨테이너 들을 정의 ( 컴�
       - --collation-server=utf8mb4_unicode_ci
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-      - dbdata:/var/lib/mysql3 # -v 옵션 (다렉토리 마운트 설정)
+      - ./var/lib/mysql3 # -v 옵션 (다렉토리 마운트 설정)
